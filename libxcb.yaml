@@ -1,32 +1,36 @@
 Name: libxcb
 Summary: A C binding to the X11 protocol
-Version: 1.7
-Release: 0
+Version: 1.8.1
+Release: 1
 Group: System/Libraries
 License: MIT
 URL: http://xcb.freedesktop.org/
 Sources:
     - http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
-PkgConfigBR: 
-    - xorg-macros
-    - pthread-stubs
-    - xcb-proto
-    - xau
-    - xproto
+Description: "Description: %{summary}"
 PkgBR:
     - libxslt
     - python-devel
+PkgConfigBR:
+    - pthread-stubs
+    - xcb-proto >= 1.7
+    - xau >= 0.99.2
+Configure: configure
 ConfigOptions:
     - --docdir=%{_datadir}/doc/%{name}-%{version}
     - --disable-build-docs
+Builder: make
 SubPackages:
-    - Name: devel
-      Summary: Development files for %{name}
-      Group: Development/Libraries
-      Requires:
-          - libpthread-stubs
-          - libXau-devel
     - Name: doc
       Summary: Documentation for %{name}
       Group: Documentation
+      Description: "Description: %{summary}"
+
+    - Name: devel
+      Summary: Development files for %{name}
+      Group: Development/Libraries
+      Description: "Description: %{summary}"
+      Requires:
+          - libpthread-stubs
+          - libXau-devel
 
