@@ -9,7 +9,7 @@ Name:       libxcb
 # << macros
 
 Summary:    A C binding to the X11 protocol
-Version:    1.8.1
+Version:    1.9
 Release:    1
 Group:      System/Libraries
 License:    MIT
@@ -90,6 +90,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 # >> files doc
 %{_datadir}/doc/%{name}-%{version}
+%{_mandir}/man3/*
 # << files doc
 
 %files devel
