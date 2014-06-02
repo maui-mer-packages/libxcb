@@ -10,8 +10,8 @@ Sources:
 Description: "Description: %{summary}"
 PkgBR:
     - libxslt
-    - python-devel
 PkgConfigBR:
+    - python2
     - pthread-stubs
     - xcb-proto >= 1.7
     - xau >= 0.99.2

@@ -18,11 +18,11 @@ Source0:    http://xcb.freedesktop.org/dist/%{name}-%{version}.tar.bz2
 Source100:  libxcb.yaml
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
+BuildRequires:  pkgconfig(python2)
 BuildRequires:  pkgconfig(pthread-stubs)
 BuildRequires:  pkgconfig(xcb-proto) >= 1.7
 BuildRequires:  pkgconfig(xau) >= 0.99.2
 BuildRequires:  libxslt
-BuildRequires:  python-devel
 
 %description
 Description: %{summary}
